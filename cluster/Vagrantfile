@@ -7,7 +7,7 @@ Vagrant.configure("2") do |config|
     mozart.vm.network "private_network", ip: "192.168.56.101"
     mozart.vm.provider "virtualbox" do |vb|
       vb.name = "mozart"
-      vb.gui = true
+      vb.gui = false
       vb.cpus = 4
       vb.memory = 4096
     end
@@ -19,7 +19,7 @@ Vagrant.configure("2") do |config|
     grq.vm.network "private_network", ip: "192.168.56.102"
     grq.vm.provider "virtualbox" do |vb|
       vb.name = "grq"
-      vb.gui = true
+      vb.gui = false
       vb.cpus = 2
       vb.memory = 2048
     end
@@ -31,7 +31,7 @@ Vagrant.configure("2") do |config|
     metrics.vm.network "private_network", ip: "192.168.56.103"
     metrics.vm.provider "virtualbox" do |vb|
       vb.name = "metrics"
-      vb.gui = true
+      vb.gui = false
       vb.cpus = 2
       vb.memory = 2048
     end
@@ -43,7 +43,7 @@ Vagrant.configure("2") do |config|
     factotum.vm.network "private_network", ip: "192.168.56.104"
     factotum.vm.provider "virtualbox" do |vb|
       vb.name = "factotum"
-      vb.gui = true
+      vb.gui = false
       vb.cpus = 2
       vb.memory = 2048
     end
@@ -55,7 +55,7 @@ Vagrant.configure("2") do |config|
     cont_int.vm.network "private_network", ip: "192.168.56.105"
     cont_int.vm.provider "virtualbox" do |vb|
       vb.name = "cont_int"
-      vb.gui = true
+      vb.gui = false
       vb.cpus = 2
       vb.memory = 2048
     end
