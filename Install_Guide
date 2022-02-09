@@ -1,0 +1,149 @@
+# Uninstall Elasticsearch 7.1.1-1
+    sudo yum remove elasticsearch
+
+# Install Elasticsearch 1.7
+    wget https://download.elastic.co/elasticsearch/elasticsearch/elasticsearch-1.7.0.noarch.rpm
+    sudo rpm -ivh elasticsearch-1.7.0.noarch.rpm
+    sudo systemctl enable elasticsearch.service
+    sudo systemctl start elasticsearch.service
+    sudo systemctl status elasticsearch.service
+
+# Conda install packages v3.0.5
+    https://hysds.jfrog.io/artifactory/generic-local/installation/ops/v3.0.5/hysds-conda_env-v3.0.5.tar.gz
+    https://hysds.jfrog.io/artifactory/generic-local/installation/ops/v3.0.5/hysds-grq_venv-v3.0.5.tar.gz
+    https://hysds.jfrog.io/artifactory/generic-local/installation/ops/v3.0.5/hysds-metrics_venv-v3.0.5.tar.gz
+    https://hysds.jfrog.io/artifactory/generic-local/installation/ops/v3.0.5/hysds-mozart_venv-v3.0.5.tar.gz
+    https://hysds.jfrog.io/artifactory/generic-local/installation/ops/v3.0.5/hysds-verdi_venv-v3.0.5.tar.gz
+
+# Conda install packages v4.0.1.beta.5
+    https://hysds.jfrog.io/artifactory/generic-local/installation/ops/v4.0.1-beta.5/hysds-conda_env-v4.0.1-beta.5.tar.gz
+    https://hysds.jfrog.io/artifactory/generic-local/installation/ops/v4.0.1-beta.5/hysds-grq_venv-v4.0.1-beta.5.tar.gz
+    https://hysds.jfrog.io/artifactory/generic-local/installation/ops/v4.0.1-beta.5/hysds-metrics_venv-v4.0.1-beta.5.tar.gz
+    https://hysds.jfrog.io/artifactory/generic-local/installation/ops/v4.0.1-beta.5/hysds-mozart_venv-v4.0.1-beta.5.tar.gz
+    https://hysds.jfrog.io/artifactory/generic-local/installation/ops/v4.0.1-beta.5/hysds-verdi_venv-v4.0.1-beta.5.tar.gz
+
+# Installing conda packages
+    mkdir -p ~/conda
+    wget https://hysds.jfrog.io/artifactory/generic-local/installation/ops/v3.0.5/hysds-conda_env-v3.0.5.tar.gz
+    tar xfz hysds-conda_env-v3.0.5.tar.gz -C conda
+    export PATH=$HOME/conda/bin:$PATH
+    conda-unpack
+
+# Install Mozart 
+    cd ~
+    rm -rf logstash
+    wget https://download.elastic.co/logstash/logstash/logstash-1.5.5.tar.gz
+    tar xfz logstash-1.5.5.tar.gz
+    ln -sf logstash-1.5.5 logstash
+    sudo yum remove elasticsearch
+    wget https://download.elastic.co/elasticsearch/elasticsearch/elasticsearch-1.7.0.noarch.rpm
+    sudo rpm -ivh elasticsearch-1.7.0.noarch.rpm
+    sudo rm /etc/elasticsearch/elasticsearch.yml
+    wget https://github.com/hysds/puppet-mozart/blob/master/templates/elasticsearch.yml
+    sudo mv elasticsearch.yml /etc/elasticsearch/
+    sudo systemctl enable elasticsearch.service
+    sudo systemctl start elasticsearch.service
+    sudo systemctl status elasticsearch.service
+    mkdir -p ~/conda
+    wget https://hysds.jfrog.io/artifactory/generic-local/installation/ops/v3.0.5/hysds-conda_env-v3.0.5.tar.gz
+    tar xfz hysds-conda_env-v3.0.5.tar.gz -C conda
+    export PATH=$HOME/conda/bin:$PATH
+    conda-unpack
+    wget https://hysds.jfrog.io/artifactory/generic-local/installation/ops/v3.0.5/hysds-mozart_venv-v3.0.5.tar.gz
+    tar xfz hysds-mozart_venv-v3.0.5.tar.gz
+    source .bash_profile 
+
+# Install GRQ
+    cd ~
+    rm -rf logstash
+    wget https://download.elastic.co/logstash/logstash/logstash-1.5.5.tar.gz
+    tar xfz logstash-1.5.5.tar.gz
+    ln -sf logstash-1.5.5 logstash
+    sudo yum remove elasticsearch
+    wget https://download.elastic.co/elasticsearch/elasticsearch/elasticsearch-1.7.0.noarch.rpm
+    sudo rpm -ivh elasticsearch-1.7.0.noarch.rpm
+    sudo rm /etc/elasticsearch/elasticsearch.yml
+    wget https://github.com/hysds/puppet-grq/blob/master/templates/elasticsearch.yml
+    sudo mv elasticsearch.yml /etc/elasticsearch/
+    sudo systemctl enable elasticsearch.service
+    sudo systemctl start elasticsearch.service
+    sudo systemctl status elasticsearch.service
+    mkdir -p ~/conda
+    wget https://hysds.jfrog.io/artifactory/generic-local/installation/ops/v3.0.5/hysds-conda_env-v3.0.5.tar.gz
+    tar xfz hysds-conda_env-v3.0.5.tar.gz -C conda
+    export PATH=$HOME/conda/bin:$PATH
+    conda-unpack
+    wget https://hysds.jfrog.io/artifactory/generic-local/installation/ops/v3.0.5/hysds-grq_venv-v3.0.5.tar.gz
+    tar xfz hysds-grq_venv-v3.0.5.tar.gz
+    source .bash_profile 
+
+# Install Metrics
+    cd ~
+    rm -rf logstash
+    wget https://download.elastic.co/logstash/logstash/logstash-1.5.5.tar.gz
+    tar xfz logstash-1.5.5.tar.gz
+    ln -sf logstash-1.5.5 logstash
+    sudo yum remove elasticsearch
+    wget https://download.elastic.co/elasticsearch/elasticsearch/elasticsearch-1.7.0.noarch.rpm
+    sudo rpm -ivh elasticsearch-1.7.0.noarch.rpm
+    sudo rm /etc/elasticsearch/elasticsearch.yml
+    wget https://github.com/hysds/puppet-metrics/blob/master/templates/elasticsearch.yml
+    sudo mv elasticsearch.yml /etc/elasticsearch/
+    sudo systemctl enable elasticsearch.service
+    sudo systemctl start elasticsearch.service
+    sudo systemctl status elasticsearch.service
+    mkdir -p ~/conda
+    wget https://hysds.jfrog.io/artifactory/generic-local/installation/ops/v3.0.5/hysds-conda_env-v3.0.5.tar.gz
+    tar xfz hysds-conda_env-v3.0.5.tar.gz -C conda
+    export PATH=$HOME/conda/bin:$PATH
+    conda-unpack
+    wget https://hysds.jfrog.io/artifactory/generic-local/installation/ops/v3.0.5/hysds-metrics_venv-v3.0.5.tar.gz
+    tar xfz hysds-metrics_venv-v3.0.5.tar.gz
+    source .bash_profile 
+
+# Install Factotum
+    cd ~
+    mkdir -p ~/conda
+    wget https://hysds.jfrog.io/artifactory/generic-local/installation/ops/v3.0.5/hysds-conda_env-v3.0.5.tar.gz
+    tar xfz hysds-conda_env-v3.0.5.tar.gz -C conda
+    export PATH=$HOME/conda/bin:$PATH
+    conda-unpack
+    wget https://hysds.jfrog.io/artifactory/generic-local/installation/ops/v3.0.5/hysds-verdi_venv-v3.0.5.tar.gz
+    tar xfz hysds-verdi_venv-v3.0.5.tar.gz
+    source .bash_profile 
+
+# Install CI
+    cd ~
+    mkdir -p ~/conda
+    wget https://hysds.jfrog.io/artifactory/generic-local/installation/ops/v3.0.5/hysds-conda_env-v3.0.5.tar.gz
+    tar xfz hysds-conda_env-v3.0.5.tar.gz -C conda
+    export PATH=$HOME/conda/bin:$PATH
+    conda-unpack
+    wget https://hysds.jfrog.io/artifactory/generic-local/installation/ops/v3.0.5/hysds-verdi_venv-v3.0.5.tar.gz
+    tar xfz hysds-verdi_venv-v3.0.5.tar.gz
+    echo 'jenkins.model.Jenkins.instance.securityRealm.createAccount("ops", "ava")' | java -jar /home/ops/jenkins/war/WEB-INF/jenkins-cli.jar -s "http://localhost:8080" -auth admin:c431f7021a844b35bff15cb4624f9681 -noKeyAuth groovy = –
+    source .bash_profile 
+
+# How to Setup a WebDAV Server Using Apache on CentOS 7
+    reference: https://www.vultr.com/docs/how-to-setup-a-webdav-server-using-apache-on-centos-7
+
+# Create Jenkins User using CLI
+    reference: https://sharadchhetri.com/create-jenkins-user-command-line-gui/ 
+    wget http://localhost:8080/jnlpJars/jenkins-cli.jar
+    echo 'jenkins.model.Jenkins.instance.securityRealm.createAccount("ops", "ava")' | java -jar ./jenkins-cli.jar -s "http://localhost:8080" -auth admin:c431f7021a844b35bff15cb4624f9681 -noKeyAuth groovy = –
+
+# changed config-branch.xml
+    look at ./config-branch.xml
+
+# port forwarding from vm -> remote server -> host
+    you'd need a multihop tunnel like this:
+    ssh -L 9200:my_mozart.ip:9200 user@instance.ip -f -N
+
+    then open up your browser to localhost:9200
+
+    here's my notes on that:
+    #tunnel virtual machine port through host machine
+    ssh -L 5080:virtual.machine.ip:80 host.machine
+    e.g. ssh -L 5080:10.10.1.129:80 sciflo
+        ssh -L 5000:10.10.1.129:5000 sciflo -f -N
+        ssh -L 5001:10.10.1.129:5001 sciflo -f -N

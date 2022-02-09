@@ -1,0 +1,368 @@
+{
+  "datasets": [
+    {
+      "ipath": "hysds::data/AOI-Volcano",
+      "match_pattern": "/(?P<dataset_type>AOI)-(?P<aoi_type>VOLC)-(?P<station>GVN)_(?P<id>.+)-(?P<vname>.*)$",
+      "alt_match_pattern": null,
+      "extractor": null,
+      "level": "l1",
+      "type": "ancillary",
+      "publish": {
+        "location": "dav://{{ DAV_USER }}:{{ DAV_PASSWORD }}@{{ DAV_SERVER }}/products/volcano/{version}/{id}",
+        "urls": [
+          "/data/ava-products/products/volcano/{version}/{id}",
+          "dav://{{ DAV_USER }}:{{ DAV_PASSWORD }}@{{ DAV_SERVER }}/products/volcano/{version}/{id}"
+        ]
+      },
+      "browse": {
+        "location": "dav://{{ DAV_USER }}:{{ DAV_PASSWORD }}@{{ DAV_SERVER }}/browse/volcano/{version}/{id}",
+        "urls": [
+          "/data/ava-products/browse/volcano/{version}/{id}",
+          "dav://{{ DAV_USER }}:{{ DAV_PASSWORD }}@{{ DAV_SERVER }}/browse/volcano/{version}/{id}"
+        ]
+      }
+    },
+    {
+      "ipath": "hysds::data/Volcano",
+      "match_pattern": "/(?P<dataset_type>VOLC)-(?P<station>GVN)_(?P<id>.+)-(?P<vname>.*)$",
+      "alt_match_pattern": null,
+      "extractor": null,
+      "level": "l1",
+      "type": "ancillary",
+      "publish": {
+        "location": "dav://{{ DAV_USER }}:{{ DAV_PASSWORD }}@{{ DAV_SERVER }}/products/volcano/{version}/{id}",
+        "urls": [
+          "/data/ava-products/products/volcano/{version}/{id}",
+          "dav://{{ DAV_USER }}:{{ DAV_PASSWORD }}@{{ DAV_SERVER }}/products/volcano/{version}/{id}"
+        ]
+      },
+      "browse": {
+        "location": "dav://{{ DAV_USER }}:{{ DAV_PASSWORD }}@{{ DAV_SERVER }}/browse/volcano/{version}/{id}",
+        "urls": [
+          "/data/ava-products/browse/volcano/{version}/{id}",
+          "dav://{{ DAV_USER }}:{{ DAV_PASSWORD }}@{{ DAV_SERVER }}/browse/volcano/{version}/{id}"
+        ]
+      }
+    },
+    {
+      "ipath": "hysds::data/metadata-AST_L1T",
+      "match_pattern": "/(?P<dataset_type>MET)-(?P<short_name>AST_L1T)-(?P<year>\\d{4})(?P<month>\\d{2})(?P<day>\\d{2})T(?P<rest>.*)-(?P<version>.*?)$",
+      "alt_match_pattern": null,
+      "extractor": null,
+      "level": "l1",
+      "type": "ancillary"
+    },
+    {
+      "ipath": "hysds::data/metadata-AST_L1B",
+      "match_pattern": "/(?P<dataset_type>MET)-(?P<short_name>AST_L1B)-(?P<year>\\d{4})(?P<month>\\d{2})(?P<day>\\d{2})T(?P<rest>.*)-(?P<version>.*?)$",
+      "alt_match_pattern": null,
+      "extractor": null,
+      "level": "l1",
+      "type": "ancillary"
+    },
+    {
+      "ipath": "hysds::data/metadata-EO1_ALI",
+      "match_pattern": "/(?P<dataset_type>MET)-(?P<short_name>EO1_ALI)-(?P<year>\\d{4})(?P<month>\\d{2})(?P<day>\\d{2})T(?P<rest>.*)-(?P<version>.*?)$",
+      "alt_match_pattern": null,
+      "extractor": null,
+      "level": "l1",
+      "type": "ancillary"
+    },
+    {
+      "ipath": "hysds::data/metadata-AST_09T",
+      "match_pattern": "/(?P<dataset_type>MET)-(?P<short_name>AST_09T)-(?P<year>\\d{4})(?P<month>\\d{2})(?P<day>\\d{2})T(?P<rest>.*)-(?P<version>.*?)$",
+      "alt_match_pattern": null,
+      "extractor": null,
+      "level": "l1",
+      "type": "ancillary"
+    },
+    {
+      "ipath": "hysds::data/metadata-EO1_Hyperion",
+      "match_pattern": "/(?P<dataset_type>MET)-(?P<short_name>EO1_Hyperion)-(?P<year>\\d{4})(?P<month>\\d{2})(?P<day>\\d{2})T(?P<rest>.*)-(?P<version>.*?)$",
+      "alt_match_pattern": null,
+      "extractor": null,
+      "level": "l1",
+      "type": "ancillary"
+    },
+    {
+      "ipath": "hysds::data/metadata-ASTGTM",
+      "match_pattern": "/(?P<dataset_type>MET)-(?P<short_name>ASTGTM)-(?P<year>\\d{4})(?P<month>\\d{2})(?P<day>\\d{2})T(?P<rest>.*)-(?P<version>.*?)$",
+      "alt_match_pattern": null,
+      "extractor": null,
+      "level": "l1",
+      "type": "ancillary"
+    },
+    {
+      "ipath": "hysds::data/metadata-AST14DEM",
+      "match_pattern": "/(?P<dataset_type>MET)-(?P<short_name>AST14DEM)-(?P<year>\\d{4})(?P<month>\\d{2})(?P<day>\\d{2})T(?P<rest>.*)-(?P<version>.*?)$",
+      "alt_match_pattern": null,
+      "extractor": null,
+      "level": "l1",
+      "type": "ancillary"
+    },
+    {
+      "ipath": "hysds::data/AST_L1B",
+      "match_pattern": "/(?P<short_name>AST_L1B)-(?P<year>\\d{4})(?P<month>\\d{2})(?P<day>\\d{2})(?P<rest>.*)-(?P<version>.*?)$",
+      "alt_match_pattern": null,
+      "extractor": null,
+      "level": "l2",
+      "type": "granule",
+      "publish": {
+        "location": "dav://{{ DAV_USER }}:{{ DAV_PASSWORD }}@{{ DAV_SERVER }}/products/{short_name}/{version}/{year}/{month}/{day}/{short_name}-{year}{month}{day}{rest}-{version}",
+        "urls": [
+          "/data/ava-products/products/{short_name}/{version}/{year}/{month}/{day}/{short_name}-{year}{month}{day}{rest}-{version}",
+          "dav://{{ DAV_USER }}:{{ DAV_PASSWORD }}@{{ DAV_SERVER }}/products/{short_name}/{version}/{year}/{month}/{day}/{short_name}-{year}{month}{day}{rest}-{version}"
+        ]
+      },
+      "browse": {
+        "location": "dav://{{ DAV_USER }}:{{ DAV_PASSWORD }}@{{ DAV_SERVER }}/browse/{short_name}/{version}/{year}/{month}/{day}/{short_name}-{year}{month}{day}{rest}-{version}",
+        "urls": [
+          "/data/ava-products/browse/{short_name}/{version}/{year}/{month}/{day}/{short_name}-{year}{month}{day}{rest}-{version}",
+          "dav://{{ DAV_USER }}:{{ DAV_PASSWORD }}@{{ DAV_SERVER }}/browse/{short_name}/{version}/{year}/{month}/{day}/{short_name}-{year}{month}{day}{rest}-{version}"
+        ]
+      }
+    },
+    {
+      "ipath": "hysds::data/AST_09T",
+      "match_pattern": "/(?P<short_name>AST_09T)-(?P<year>\\d{4})(?P<month>\\d{2})(?P<day>\\d{2})(?P<rest>.*)-(?P<version>.*?)$",
+      "alt_match_pattern": null,
+      "extractor": null,
+      "level": "l2",
+      "type": "granule",
+      "publish": {
+        "location": "dav://{{ DAV_USER }}:{{ DAV_PASSWORD }}@{{ DAV_SERVER }}/products/{short_name}/{version}/{year}/{month}/{day}/{short_name}-{year}{month}{day}{rest}-{version}",
+        "urls": [
+          "/data/ava-products/products/{short_name}/{version}/{year}/{month}/{day}/{short_name}-{year}{month}{day}{rest}-{version}",
+          "dav://{{ DAV_USER }}:{{ DAV_PASSWORD }}@{{ DAV_SERVER }}/products/{short_name}/{version}/{year}/{month}/{day}/{short_name}-{year}{month}{day}{rest}-{version}"
+        ]
+      },
+      "browse": {
+        "location": "dav://{{ DAV_USER }}:{{ DAV_PASSWORD }}@{{ DAV_SERVER }}/browse/{short_name}/{version}/{year}/{month}/{day}/{short_name}-{year}{month}{day}{rest}-{version}",
+        "urls": [
+          "/data/ava-products/browse/{short_name}/{version}/{year}/{month}/{day}/{short_name}-{year}{month}{day}{rest}-{version}",
+          "dav://{{ DAV_USER }}:{{ DAV_PASSWORD }}@{{ DAV_SERVER }}/browse/{short_name}/{version}/{year}/{month}/{day}/{short_name}-{year}{month}{day}{rest}-{version}"
+        ]
+      }
+    },
+    {
+      "ipath": "hysds::data/EO1_ALI-L1R",
+      "match_pattern": "/(?P<short_name>EO1_ALI)-(?P<product_type>L1R)-(?P<year>\\d{4})(?P<month>\\d{2})(?P<day>\\d{2})(?P<rest>.*)-(?P<version>.*?)$",
+      "alt_match_pattern": null,
+      "extractor": null,
+      "level": "l2",
+      "type": "granule",
+      "publish": {
+        "location": "dav://{{ DAV_USER }}:{{ DAV_PASSWORD }}@{{ DAV_SERVER }}/products/{short_name}/{product_type}/{version}/{year}/{month}/{day}/{short_name}- {product_type}-{year}{month}{day}{rest}-{version}",
+        "urls": [
+          "/data/ava-products/products/{short_name}/{product_type}/{version}/{year}/{month}/{day}/{short_name}-{product_type}-{year}{month}{day}{rest}-{version}",
+          "dav://{{ DAV_USER }}:{{ DAV_PASSWORD }}@{{ DAV_SERVER }}/products/{short_name}/{product_type}/{version}/{year}/{month}/{day}/{short_name}-{product_type}-{year}{month}{day}{rest}-{version}"
+        ]
+      },
+      "browse": {
+        "location": "dav://{{ DAV_USER }}:{{ DAV_PASSWORD }}@{{ DAV_SERVER }}/browse/{short_name}/{product_type}/{version}/{year}/{month}/{day}/{short_name}- {product_type}-{year}{month}{day}{rest}-{version}",
+        "urls": [
+          "/data/ava-products/browse/{short_name}/{product_type}/{version}/{year}/{month}/{day}/{short_name}-{product_type}-{year}{month}{day}{rest}-{version}",
+          "dav://{{ DAV_USER }}:{{ DAV_PASSWORD }}@{{ DAV_SERVER }}/browse/{short_name}/{product_type}/{version}/{year}/{month}/{day}/{short_name}-{product_type}-{year}{month}{day}{rest}-{version}"
+        ]
+      }
+    },
+    {
+      "ipath": "hysds::data/EO1_ALI-L1Gst",
+      "match_pattern": "/(?P<short_name>EO1_ALI)-(?P<product_type>L1Gst)-(?P<year>\\d{4})(?P<month>\\d{2})(?P<day>\\d{2})(?P<rest>.*)-(?P<version>.*?)$",
+      "alt_match_pattern": null,
+      "extractor": null,
+      "level": "l2",
+      "type": "granule",
+      "publish": {
+        "location": "dav://{{ DAV_USER }}:{{ DAV_PASSWORD }}@{{ DAV_SERVER }}/products/{short_name}/{product_type}/{version}/{year}/{month}/{day}/{short_name}- {product_type}-{year}{month}{day}{rest}-{version}",
+        "urls": [
+          "/data/ava-products/products/{short_name}/{product_type}/{version}/{year}/{month}/{day}/{short_name}-{product_type}-{year}{month}{day}{rest}-{version}",
+          "dav://{{ DAV_USER }}:{{ DAV_PASSWORD }}@{{ DAV_SERVER }}/products/{short_name}/{product_type}/{version}/{year}/{month}/{day}/{short_name}-{product_type}-{year}{month}{day}{rest}-{version}"
+        ]
+      },
+      "browse": {
+        "location": "dav://{{ DAV_USER }}:{{ DAV_PASSWORD }}@{{ DAV_SERVER }}/browse/{short_name}/{product_type}/{version}/{year}/{month}/{day}/{short_name}- {product_type}-{year}{month}{day}{rest}-{version}",
+        "urls": [
+          "/data/ava-products/browse/{short_name}/{product_type}/{version}/{year}/{month}/{day}/{short_name}-{product_type}-{year}{month}{day}{rest}-{version}",
+          "dav://{{ DAV_USER }}:{{ DAV_PASSWORD }}@{{ DAV_SERVER }}/browse/{short_name}/{product_type}/{version}/{year}/{month}/{day}/{short_name}-{product_type}-{year}{month}{day}{rest}-{version}"
+        ]
+      }
+    },
+    {
+      "ipath": "hysds::data/EO1_ALI-L1T",
+      "match_pattern": "/(?P<short_name>EO1_ALI)-(?P<product_type>L1T)-(?P<year>\\d{4})(?P<month>\\d{2})(?P<day>\\d{2})(?P<rest>.*)-(?P<version>.*?)$",
+      "alt_match_pattern": null,
+      "extractor": null,
+      "level": "l2",
+      "type": "granule",
+      "publish": {
+        "location": "dav://{{ DAV_USER }}:{{ DAV_PASSWORD }}@{{ DAV_SERVER }}/products/{short_name}/{product_type}/{version}/{year}/{month}/{day}/{short_name}- {product_type}-{year}{month}{day}{rest}-{version}",
+        "urls": [
+          "/data/ava-products/products/{short_name}/{product_type}/{version}/{year}/{month}/{day}/{short_name}-{product_type}-{year}{month}{day}{rest}-{version}",
+          "dav://{{ DAV_USER }}:{{ DAV_PASSWORD }}@{{ DAV_SERVER }}/products/{short_name}/{product_type}/{version}/{year}/{month}/{day}/{short_name}-{product_type}-{year}{month}{day}{rest}-{version}"
+        ]
+      },
+      "browse": {
+        "location": "dav://{{ DAV_USER }}:{{ DAV_PASSWORD }}@{{ DAV_SERVER }}/browse/{short_name}/{product_type}/{version}/{year}/{month}/{day}/{short_name}- {product_type}-{year}{month}{day}{rest}-{version}",
+        "urls": [
+          "/data/ava-products/browse/{short_name}/{product_type}/{version}/{year}/{month}/{day}/{short_name}-{product_type}-{year}{month}{day}{rest}-{version}",
+          "dav://{{ DAV_USER }}:{{ DAV_PASSWORD }}@{{ DAV_SERVER }}/browse/{short_name}/{product_type}/{version}/{year}/{month}/{day}/{short_name}-{product_type}-{year}{month}{day}{rest}-{version}"
+        ]
+      }
+    },
+    {
+      "ipath": "hysds::data/EO1_Hyperion-L1R",
+      "match_pattern": "/(?P<short_name>EO1_Hyperion)-(?P<product_type>L1R)-(?P<year>\\d{4})(?P<month>\\d{2})(?P<day>\\d{2})(?P<rest>.*)-(?P<version>.*?)$",
+      "alt_match_pattern": null,
+      "extractor": null,
+      "level": "l2",
+      "type": "granule",
+      "publish": {
+        "location": "dav://{{ DAV_USER }}:{{ DAV_PASSWORD }}@{{ DAV_SERVER }}/products/{short_name}/{product_type}/{version}/{year}/{month}/{day}/{short_name}- {product_type}-{year}{month}{day}{rest}-{version}",
+        "urls": [
+          "/data/ava-products/products/{short_name}/{product_type}/{version}/{year}/{month}/{day}/{short_name}-{product_type}-{year}{month}{day}{rest}-{version}",
+          "dav://{{ DAV_USER }}:{{ DAV_PASSWORD }}@{{ DAV_SERVER }}/products/{short_name}/{product_type}/{version}/{year}/{month}/{day}/{short_name}-{product_type}-{year}{month}{day}{rest}-{version}"
+        ]
+      },
+      "browse": {
+        "location": "dav://{{ DAV_USER }}:{{ DAV_PASSWORD }}@{{ DAV_SERVER }}/browse/{short_name}/{product_type}/{version}/{year}/{month}/{day}/{short_name}- {product_type}-{year}{month}{day}{rest}-{version}",
+        "urls": [
+          "/data/ava-products/browse/{short_name}/{product_type}/{version}/{year}/{month}/{day}/{short_name}-{product_type}-{year}{month}{day}{rest}-{version}",
+          "dav://{{ DAV_USER }}:{{ DAV_PASSWORD }}@{{ DAV_SERVER }}/browse/{short_name}/{product_type}/{version}/{year}/{month}/{day}/{short_name}-{product_type}-{year}{month}{day}{rest}-{version}"
+        ]
+      }
+    },
+    {
+      "ipath": "hysds::data/EO1_Hyperion-L1Gst",
+      "match_pattern": "/(?P<short_name>EO1_Hyperion)-(?P<product_type>L1Gst)-(?P<year>\\d{4})(?P<month>\\d{2})(?P<day>\\d{2})(?P<rest>.*)-(?P<version>.*?)$",
+      "alt_match_pattern": null,
+      "extractor": null,
+      "level": "l2",
+      "type": "granule",
+      "publish": {
+        "location": "dav://{{ DAV_USER }}:{{ DAV_PASSWORD }}@{{ DAV_SERVER }}/products/{short_name}/{product_type}/{version}/{year}/{month}/{day}/{short_name}- {product_type}-{year}{month}{day}{rest}-{version}",
+        "urls": [
+          "/data/ava-products/products/{short_name}/{product_type}/{version}/{year}/{month}/{day}/{short_name}-{product_type}-{year}{month}{day}{rest}-{version}",
+          "dav://{{ DAV_USER }}:{{ DAV_PASSWORD }}@{{ DAV_SERVER }}/products/{short_name}/{product_type}/{version}/{year}/{month}/{day}/{short_name}-{product_type}-{year}{month}{day}{rest}-{version}"
+        ]
+      },
+      "browse": {
+        "location": "dav://{{ DAV_USER }}:{{ DAV_PASSWORD }}@{{ DAV_SERVER }}/browse/{short_name}/{product_type}/{version}/{year}/{month}/{day}/{short_name}- {product_type}-{year}{month}{day}{rest}-{version}",
+        "urls": [
+          "/data/ava-products/browse/{short_name}/{product_type}/{version}/{year}/{month}/{day}/{short_name}-{product_type}-{year}{month}{day}{rest}-{version}",
+          "dav://{{ DAV_USER }}:{{ DAV_PASSWORD }}@{{ DAV_SERVER }}/browse/{short_name}/{product_type}/{version}/{year}/{month}/{day}/{short_name}-{product_type}-{year}{month}{day}{rest}-{version}"
+        ]
+      }
+    },
+    {
+      "ipath": "hysds::data/EO1_Hyperion-L1T",
+      "match_pattern": "/(?P<short_name>EO1_Hyperion)-(?P<product_type>L1T)-(?P<year>\\d{4})(?P<month>\\d{2})(?P<day>\\d{2})(?P<rest>.*)-(?P<version>.*?)$",
+      "alt_match_pattern": null,
+      "extractor": null,
+      "level": "l2",
+      "type": "granule",
+      "publish": {
+        "location": "dav://{{ DAV_USER }}:{{ DAV_PASSWORD }}@{{ DAV_SERVER }}/products/{short_name}/{product_type}/{version}/{year}/{month}/{day}/{short_name}- {product_type}-{year}{month}{day}{rest}-{version}",
+        "urls": [
+          "/data/ava-products/products/{short_name}/{product_type}/{version}/{year}/{month}/{day}/{short_name}-{product_type}-{year}{month}{day}{rest}-{version}",
+          "dav://{{ DAV_USER }}:{{ DAV_PASSWORD }}@{{ DAV_SERVER }}/products/{short_name}/{product_type}/{version}/{year}/{month}/{day}/{short_name}-{product_type}-{year}{month}{day}{rest}-{version}"
+        ]
+      },
+      "browse": {
+        "location": "dav://{{ DAV_USER }}:{{ DAV_PASSWORD }}@{{ DAV_SERVER }}/browse/{short_name}/{product_type}/{version}/{year}/{month}/{day}/{short_name}- {product_type}-{year}{month}{day}{rest}-{version}",
+        "urls": [
+          "/data/ava-products/browse/{short_name}/{product_type}/{version}/{year}/{month}/{day}/{short_name}-{product_type}-{year}{month}{day}{rest}-{version}",
+          "dav://{{ DAV_USER }}:{{ DAV_PASSWORD }}@{{ DAV_SERVER }}/browse/{short_name}/{product_type}/{version}/{year}/{month}/{day}/{short_name}-{product_type}-{year}{month}{day}{rest}-{version}"
+        ]
+      }
+    },
+    {
+      "ipath": "hysds::data/AST_L1T-SO",
+      "match_pattern": "/(?P<short_name>AST_L1T-SO)-(?P<year>\\d{4})(?P<month>\\d{2})(?P<day>\\d{2})(?P<rest>.*)-(?P<version>.*?)$",
+      "alt_match_pattern": null,
+      "extractor": null,
+      "level": "l2",
+      "type": "granule",
+      "publish": {
+        "location": "dav://{{ DAV_USER }}:{{ DAV_PASSWORD }}@{{ DAV_SERVER }}/products/{short_name}/{version}/{year}/{month}/{day}/{short_name}-{year}{month}{day}{rest}-{version}",
+        "urls": [
+          "/data/ava-products/products/{short_name}/{version}/{year}/{month}/{day}/{short_name}-{year}{month}{day}{rest}-{version}",
+          "dav://{{ DAV_USER }}:{{ DAV_PASSWORD }}@{{ DAV_SERVER }}/products/{short_name}/{version}/{year}/{month}/{day}/{short_name}-{year}{month}{day}{rest}-{version}"
+        ]
+      },
+      "browse": {
+        "location": "dav://{{ DAV_USER }}:{{ DAV_PASSWORD }}@{{ DAV_SERVER }}/browse/{short_name}/{version}/{year}/{month}/{day}/{short_name}-{year}{month}{day}{rest}-{version}",
+        "urls": [
+          "/data/ava-products/browse/{short_name}/{version}/{year}/{month}/{day}/{short_name}-{year}{month}{day}{rest}-{version}",
+          "dav://{{ DAV_USER }}:{{ DAV_PASSWORD }}@{{ DAV_SERVER }}/browse/{short_name}/{version}/{year}/{month}/{day}/{short_name}-{year}{month}{day}{rest}-{version}"
+        ]
+      }
+    },
+    {
+      "ipath": "hysds::data/AST_09T-STF",
+      "match_pattern": "/(?P<short_name>AST_09T-STF)-(?P<year>\\d{4})(?P<month>\\d{2})(?P<day>\\d{2})(?P<rest>.*)-(?P<version>.*?)$",
+      "alt_match_pattern": null,
+      "extractor": null,
+      "level": "l2",
+      "type": "granule",
+      "publish": {
+        "location": "dav://{{ DAV_USER }}:{{ DAV_PASSWORD }}@{{ DAV_SERVER }}/products/{short_name}/{version}/{year}/{month}/{day}/{short_name}-{year}{month}{day}{rest}-{version}",
+        "urls": [
+          "/data/ava-products/products/{short_name}/{version}/{year}/{month}/{day}/{short_name}-{year}{month}{day}{rest}-{version}",
+          "dav://{{ DAV_USER }}:{{ DAV_PASSWORD }}@{{ DAV_SERVER }}/products/{short_name}/{version}/{year}/{month}/{day}/{short_name}-{year}{month}{day}{rest}-{version}"
+        ]
+      },
+      "browse": {
+        "location": "dav://{{ DAV_USER }}:{{ DAV_PASSWORD }}@{{ DAV_SERVER }}/browse/{short_name}/{version}/{year}/{month}/{day}/{short_name}-{year}{month}{day}{rest}-{version}",
+        "urls": [
+          "/data/ava-products/browse/{short_name}/{version}/{year}/{month}/{day}/{short_name}-{year}{month}{day}{rest}-{version}",
+          "dav://{{ DAV_USER }}:{{ DAV_PASSWORD }}@{{ DAV_SERVER }}/browse/{short_name}/{version}/{year}/{month}/{day}/{short_name}-{year}{month}{day}{rest}-{version}"
+        ]
+      }
+    },
+    {
+      "ipath": "hysds::data/dumby-product",
+      "match_pattern": "/(?P<id>dumby-product-\\d+)$",
+      "alt_match_pattern": null,
+      "extractor": null,
+      "level": "l0",
+      "type": "dumby-data",
+      "publish": {
+        "location": "dav://{{ DAV_USER }}:{{ DAV_PASSWORD }}@{{ DAV_SERVER }}/products/dumby/{version}/{id}",
+        "urls": [
+          "/data/ava-products/products/dumby/{version}/{id}",
+          "dav://{{ DAV_USER }}:{{ DAV_PASSWORD }}@{{ DAV_SERVER }}/products/dumby/{version}/{id}"
+        ]
+      },
+      "browse": {
+        "location": "dav://{{ DAV_USER }}:{{ DAV_PASSWORD }}@{{ DAV_SERVER }}/browse/dumby/{version}/{id}",
+        "urls": [
+          "/data/ava-products/browse/dumby/{version}/{id}",
+          "dav://{{ DAV_USER }}:{{ DAV_PASSWORD }}@{{ DAV_SERVER }}/browse/dumby/{version}/{id}"
+        ]
+      }
+    },
+    {
+      "ipath": "ariamh::data/triaged_job",
+      "level": "NA",
+      "type": "triaged_job",
+      "match_pattern": "/(?P<id>triaged_job-.*)$",
+      "alt_match_pattern": null,
+      "extractor": null,
+      "publish": {
+        "location": "dav://{{ DAV_USER }}:{{ DAV_PASSWORD }}@{{ DAV_SERVER }}/datasets/{type}/{version}/{id}",
+        "urls": [
+          "/data/ava-products/datasets/{type}/{version}/{id}",
+          "dav://{{ DAV_USER }}:{{ DAV_PASSWORD }}@{{ DAV_SERVER }}/datasets/{type}/{version}/{id}"
+        ]
+      },
+      "browse": {
+        "location": "dav://{{ DAV_USER }}:{{ DAV_PASSWORD }}@{{ DAV_SERVER }}/browse/{type}/{version}/{id}",
+        "urls": [
+          "/data/ava-products/browse/{type}/{version}/{id}",
+          "dav://{{ DAV_USER }}:{{ DAV_PASSWORD }}@{{ DAV_SERVER }}/browse/{type}/{version}/{id}"
+        ]
+      }
+    }
+  ]
+}

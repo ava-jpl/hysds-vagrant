@@ -1,0 +1,141 @@
+# HySDS config
+TYPE: hysds
+
+# mozart
+MOZART_PVT_IP: 192.168.56.101
+MOZART_PUB_IP: 192.168.56.101
+MOZART_FQDN: 192.168.56.101
+
+# mozart rabbitmq
+MOZART_RABBIT_PVT_IP: 192.168.56.101
+MOZART_RABBIT_PUB_IP: 192.168.56.101
+MOZART_RABBIT_FQDN: 192.168.56.101
+MOZART_RABBIT_USER: guest
+MOZART_RABBIT_PASSWORD: guest
+
+# mozart redis
+MOZART_REDIS_PVT_IP: 192.168.56.101
+MOZART_REDIS_PUB_IP: 192.168.56.101
+MOZART_REDIS_FQDN: 192.168.56.101
+MOZART_REDIS_PASSWORD:
+
+# mozart ES
+MOZART_ES_PVT_IP: 192.168.56.101
+MOZART_ES_PUB_IP: 192.168.56.101
+MOZART_ES_FQDN: 192.168.56.101
+
+OPS_USER: ops
+OPS_HOME: /home/ops
+OPS_PASSWORD_HASH: 1932ba4fb497840f089017818e32807de4773e5089a72892998ecee3
+LDAP_GROUPS: ava
+KEY_FILENAME: /home/ops/.ssh/ava
+JENKINS_USER: jenkins
+JENKINS_DIR: /home/ops/jenkins
+
+# metrics
+METRICS_PVT_IP: 192.168.56.103
+METRICS_PUB_IP: 192.168.56.103
+METRICS_FQDN: 192.168.56.103
+
+# metrics redis
+METRICS_REDIS_PVT_IP: 192.168.56.103
+METRICS_REDIS_PUB_IP: 192.168.56.103
+METRICS_REDIS_FQDN: 192.168.56.103
+METRICS_REDIS_PASSWORD:
+
+# metrics ES
+METRICS_ES_PVT_IP: 192.168.56.103
+METRICS_ES_PUB_IP: 192.168.56.103
+METRICS_ES_FQDN: 192.168.56.103
+
+# grq
+GRQ_PVT_IP: 192.168.56.102
+GRQ_PUB_IP: 192.168.56.102
+GRQ_FQDN: 192.168.56.102
+GRQ_PORT: 8878
+
+# grq ES
+GRQ_ES_PVT_IP: 192.168.56.102
+GRQ_ES_PUB_IP: 192.168.56.102
+GRQ_ES_FQDN: 192.168.56.102
+
+# factotum
+FACTOTUM_PVT_IP: 192.168.56.104
+FACTOTUM_PUB_IP: 192.168.56.104
+FACTOTUM_FQDN: 192.168.56.104
+
+# continuous integration server
+CI_PVT_IP: 192.168.56.105
+CI_PUB_IP: 192.168.56.105
+CI_FQDN: 192.168.56.105
+JENKINS_API_USER: ops
+JENKINS_API_KEY: ava
+
+# verdi build
+VERDI_PVT_IP: 192.168.56.104
+VERDI_PUB_IP: 192.168.56.104
+VERDI_FQDN: 192.168.56.104
+
+# other non-autoscale verdi hosts (optional)
+OTHER_VERDI_HOSTS:
+  - VERDI_PVT_IP:
+    VERDI_PUB_IP:
+    VERDI_FQDN:
+
+# WebDAV product server
+DAV_SERVER: vulcan.jpl.nasa.gov/webdav
+DAV_USER: ops
+DAV_PASSWORD: ava
+
+# AWS settings for product bucket
+DATASET_AWS_ACCESS_KEY:
+DATASET_AWS_SECRET_KEY:
+DATASET_AWS_REGION: us-west-2
+DATASET_S3_ENDPOINT: s3-us-west-2.amazonaws.com
+DATASET_S3_WEBSITE_ENDPOINT: s3-website-us-west-2.amazonaws.com
+DATASET_BUCKET:
+
+# AWS settings for autoscale workers
+AWS_ACCESS_KEY:
+AWS_SECRET_KEY:
+AWS_REGION: us-west-2
+S3_ENDPOINT: vulcan.jpl.nasa.gov/webdav
+CODE_BUCKET: ava_code
+VERDI_PRIMER_IMAGE: dav://ops:ava@vulcan.jpl.nasa.gov/webdav/ava_code/hysds-verdi-v3.0.5.tar.gz
+VERDI_TAG: v3.0.5
+VERDI_UID: 1001
+VERDI_GID: 1001
+VENUE: ops
+QUEUES:
+  - QUEUE_NAME: dumby-job_worker-small
+    INSTANCE_TYPES:
+      - t2.medium
+      - t3a.medium
+      - t3.medium
+  - QUEUE_NAME: dumby-job_worker-large
+    INSTANCE_TYPES:
+      - t2.medium
+      - t3a.medium
+      - t3.medium
+
+# git oauth token
+GIT_OAUTH_TOKEN:
+
+# container registry
+CONTAINER_REGISTRY:
+CONTAINER_REGISTRY_BUCKET:
+
+# DO NOT EDIT ANYTHING BELOW THIS
+
+# user_rules_dataset
+PROVES_URL: https://prov-es.jpl.nasa.gov/beta
+PROVES_IMPORT_URL: https://prov-es.jpl.nasa.gov/beta/api/v0.1/prov_es/import/json
+DATASETS_CFG: /home/ops/verdi/etc/datasets.json
+
+# system jobs queue
+SYSTEM_JOBS_QUEUE: system-jobs-queue
+
+MOZART_ES_CLUSTER: resource_cluster
+METRICS_ES_CLUSTER: metrics_cluster
+DATASET_QUERY_INDEX: grq
+USER_RULES_DATASET_INDEX: user_rules
